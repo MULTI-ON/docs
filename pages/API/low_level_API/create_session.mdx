@@ -59,7 +59,7 @@ response = multion.create_session({"input": "Weather Today", "url": "https://www
   <Tab>
   ```curl copy
   Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
-curl --location 'https://api.multion.ai/sessions' \
+curl --location 'https://api.multion.ai/public/api/v1/session' \
  --header 'Content-Type: application/json' \
  --header 'Authorization: Bearer <AUTH_TOKEN>' \ # Use this for OAuth
 --header 'X_MULTION_API_KEY: <API_KEY>' \ # Or use this for API Key

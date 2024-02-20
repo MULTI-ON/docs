@@ -7,8 +7,8 @@ List the currently running sessions with the MultiOn Agent. This is crucial for 
 
 ## Dependencies
 
-import { Callout } from 'nextra/components'
-import { Tabs, Tab } from 'nextra/components'
+import { Callout } from "nextra/components";
+import { Tabs, Tab } from "nextra/components";
 
 <Tabs items={['Python', 'JS', 'CURL']}>
   <Tab>
@@ -50,11 +50,13 @@ multion.list_sessions()
   ```curl copy
 Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
 
-curl --location 'https://api.multion.ai/sessions/' \
+curl --location 'https://api.multion.ai/public/api/v1/sessions/' \
 --header 'Authorization: Bearer <AUTH_TOKEN>' \ # Use this for OAuth
 --header 'X_MULTION_API_KEY: <API_KEY>' \ # Or use this for API Key
+
 ```
 </Tab>
 </Tabs>
 
 - For additional examples and detailed API usage, visit the [MultiOn API repository](https://github.com/MULTI-ON/api).
+```

@@ -9,8 +9,8 @@ Close an existing session with the MultiOn Agent. This is useful for conclude an
 
 ## Dependencies
 
-import { Callout } from 'nextra/components'
-import { Tabs, Tab } from 'nextra/components'
+import { Callout } from "nextra/components";
+import { Tabs, Tab } from "nextra/components";
 
 <Tabs items={['Python', 'JS','Curl']}>
   <Tab>
@@ -52,11 +52,13 @@ multion.close_session(sessionId)
   ```curl copy
 Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
 
-curl --location --request DELETE 'https://api.multion.ai/session/{sessionId}' \
+curl --location --request DELETE 'https://api.multion.ai/public/api/v1/session/{sessionId}' \
 --header 'Authorization: Bearer <AUTH_TOKEN>' \ # Use this for OAuth
 --header 'X_MULTION_API_KEY: <API_KEY>' \ # Or use this for API Key
+
 ```
 </Tab>
 </Tabs>
 
 - For more examples and detailed API usage, explore the [MultiOn API repository](https://github.com/MULTI-ON/api).
+```

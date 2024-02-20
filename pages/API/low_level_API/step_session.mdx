@@ -4,8 +4,8 @@ Step an existing MultiOn session with a new user command.
 
 ## Dependencies
 
-import { Callout } from 'nextra/components'
-import { Tabs, Tab } from 'nextra/components'
+import { Callout } from "nextra/components";
+import { Tabs, Tab } from "nextra/components";
 
 <Tabs items={['Python', 'JS', 'Curl']}>
   <Tab>
@@ -53,7 +53,7 @@ response = multion.step_session(sessionId, {"input": "what is the weather today"
 ```curl copy
 Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
 
-curl --location 'https://api.multion.ai/session/{sessionId}' \
+curl --location 'https://api.multion.ai/public/api/v1/session/{sessionId}' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <AUTH_TOKEN>' \ # Use this for OAuth
 --header 'X_MULTION_API_KEY: <API_KEY>' \ # Or use this for API Key
@@ -67,3 +67,4 @@ curl --location 'https://api.multion.ai/session/{sessionId}' \
 </Tabs>
 
 - Explore additional examples and detailed API usage at the [MultiOn API repository](https://github.com/MULTI-ON/api)
+```
