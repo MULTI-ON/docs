@@ -48,7 +48,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/MULTI-ON/api',
   },
   chat: {
-    link: 'https://discord.gg/Zj5RDdxbee',
+    link: 'https://discord.gg/multion',
   },
   docsRepositoryBase: 'https://github.com/MULTI-ON/docs',
   footer: {
