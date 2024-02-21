@@ -20,7 +20,7 @@ const logo = () => {
 const config: DocsThemeConfig = {
   head: (
     <>
-     <link rel="icon" type="image/png" href=".\icon-1012.png"></link>
+     <link rel="icon" type="image/png" href=".\icon-black-128.png"></link>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="MultiOn Documentation" />
       <meta property="og:description" content="MultiOn Documentation" />
