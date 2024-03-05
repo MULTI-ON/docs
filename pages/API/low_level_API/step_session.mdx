@@ -35,14 +35,22 @@ To step a session, you'll need to provide the session ID (sessionId) and the new
 - **input**: The new or additional user instruction for the session.
 - **url**: The URL relevant to the updated request.
 
+### Optional Parameters
+
+- **stream**: Whether to stream the response or all at once.
+
 <Tabs items={['Python', 'JS', 'Curl']}>
   <Tab>
-```python copy
-response = multion.step_session(sessionId, {"input": "what is the weather today","url": "https://www.google.com"})
+```python
+data = {
+  "input": "what is the weather today",
+  "url": "https://www.google.com"
+}
+response = multion.step_session(sessionId, data)
 ```
   </Tab>
   <Tab>
-  ``` js copy
+  ```js
     await multion.step_session(sessionId, {"input": "what is the weather today","url": "https://www.google.com"})
   ```
 <Callout type="info" emoji="ℹ️">
@@ -50,8 +58,8 @@ response = multion.step_session(sessionId, {"input": "what is the weather today"
 </Callout>
   </Tab>
   <Tab>
-```curl copy
-Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
+```bash
+## Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
 
 curl --location 'https://api.multion.ai/public/api/v1/session/{sessionId}' \
 --header 'Content-Type: application/json' \
@@ -66,5 +74,45 @@ curl --location 'https://api.multion.ai/public/api/v1/session/{sessionId}' \
 </Tab>
 </Tabs>
 
-- Explore additional examples and detailed API usage at the [MultiOn API repository](https://github.com/MULTI-ON/api)
+### Streaming API
+
+<Tabs items={['Python', 'JS', 'Curl']}>
+  <Tab>
+```python
+data = {
+  "input": "what is the weather today",
+  "url": "https://www.google.com",
+  "stream": True
+}
+response = multion.step_session(sessionId, data)
+for chunk in response:
+  if chunk:
+      print(chunk)
 ```
+  </Tab>
+  <Tab>
+  ```
+  As of the current version, the streaming feature is not available for JavaScript.
+  Please check back for updates.
+  ```
+  </Tab>
+  <Tab>
+```bash
+## Pass either the <AUTH_TOKEN> or the <API_KEY> in the header.
+
+curl --location 'https://api.multion.ai/public/api/v1/session/{sessionId}' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <AUTH_TOKEN>' \ # Use this for OAuth
+--header 'X_MULTION_API_KEY: <API_KEY>' \ # Or use this for API Key
+--data '{
+"input": "what is the weather today",
+"url": "https://www.google.com",
+"stream": true
+}'
+
+```
+</Tab>
+</Tabs>
+
+
+- Explore additional examples and detailed API usage at the [MultiOn API repository](https://github.com/MULTI-ON/api)
